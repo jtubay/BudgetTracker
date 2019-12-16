@@ -10,10 +10,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds261277.mlab.com:61277/heroku_hgff7qfg", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_hgff7qfg", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+
+mongodb://<dbuser>:<dbpassword>@ds261277.mlab.com:61277/
 
 // routes
 app.use(require("./routes/api.js"));
